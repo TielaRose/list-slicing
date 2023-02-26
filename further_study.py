@@ -16,7 +16,12 @@ def custom_len(input_list):
 
     """
 
-    return 0
+    item_count = 0
+
+    for _ in input_list:
+        item_count += 1
+
+    return item_count
 
 
 # For the next four exercises, you'll need to be clever and think about ways
@@ -44,7 +49,8 @@ def custom_append(input_list, value):
 
     """
 
-    pass
+    list_len = custom_len(input_list)
+    input_list[list_len:list_len] = [value]
 
 
 def custom_extend(input_list, second_list):
@@ -63,7 +69,9 @@ def custom_extend(input_list, second_list):
 
     """
 
-    pass
+    input_list_length = custom_len(input_list)
+
+    input_list[input_list_length:input_list_length] = second_list
 
 
 def custom_insert(input_list, index, value):
@@ -80,8 +88,9 @@ def custom_insert(input_list, index, value):
         True
 
     """
+    input_list[index:index] = [value]
 
-    pass
+# 7
 
 
 def custom_remove(input_list, value):
@@ -100,7 +109,10 @@ def custom_remove(input_list, value):
 
     """
 
-    pass
+    value_index = input_list.index(value)
+    input_list[value_index:value_index] = []
+
+# 6
 
 
 def custom_pop(input_list):
@@ -118,8 +130,21 @@ def custom_pop(input_list):
         ['Jan', 'Feb']
 
     """
+    # print('line 133, input list is ', input_list)
+    last_item = input_list[-1]
+    last_index = custom_len(input_list) - 1
 
-    return None
+    input_list[-1:] = []
+    # print('line 137, input list is ', input_list)
+
+    return last_item
+
+
+months = ['Jan', 'Feb', 'March']
+print(custom_pop(months))
+print(months)
+
+# 5
 
 
 def custom_index(input_list, value):
@@ -137,6 +162,8 @@ def custom_index(input_list, value):
 
     return 0
 
+# 4
+
 
 def custom_count(input_list, value):
     """Return the number of times value appears in the list.
@@ -152,6 +179,8 @@ def custom_count(input_list, value):
     """
 
     return 0
+
+# 3
 
 
 def custom_reverse(input_list):
@@ -172,6 +201,8 @@ def custom_reverse(input_list):
 
     pass
 
+# 2
+
 
 def custom_contains(input_list, value):
     """Return True or False if value is in the input_list.
@@ -191,6 +222,8 @@ def custom_contains(input_list, value):
     """
 
     return None
+
+# 1
 
 
 def custom_equality(some_list, another_list):
