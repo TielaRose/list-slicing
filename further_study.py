@@ -211,7 +211,10 @@ def custom_reverse(input_list):
 
     """
 
-    pass
+    reversed_list = input_list[-1::-1]
+
+    for ind, item in enumerate(input_list):
+        input_list[ind] = reversed_list[ind]
 
 # 2
 
@@ -233,7 +236,11 @@ def custom_contains(input_list, value):
 
     """
 
-    return None
+    for item in input_list:
+        if item == value:
+            return True
+
+    return False
 
 # 1
 
@@ -254,4 +261,8 @@ def custom_equality(some_list, another_list):
 
     """
 
-    return None
+    for ind, item in enumerate(some_list):
+        if item != another_list[ind]:
+            return False
+
+    return True
