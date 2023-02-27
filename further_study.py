@@ -160,7 +160,13 @@ def custom_index(input_list, value):
 
     """
 
-    return 0
+    ind_of_value = 0
+
+    for ind, item in enumerate(input_list):
+        if item == value:
+            ind_of_value = ind
+
+    return ind_of_value
 
 # 4
 
@@ -178,7 +184,13 @@ def custom_count(input_list, value):
 
     """
 
-    return 0
+    count = 0
+
+    for item in input_list:
+        if item == value:
+            count += 1
+
+    return count
 
 # 3
 
