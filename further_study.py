@@ -110,7 +110,11 @@ def custom_remove(input_list, value):
     """
 
     value_index = input_list.index(value)
-    input_list[value_index:value_index] = []
+    start = value_index
+    stop = value_index + 1
+
+    input_list[start:stop] = []
+
 
 # 6
 
@@ -139,10 +143,6 @@ def custom_pop(input_list):
 
     return last_item
 
-
-months = ['Jan', 'Feb', 'March']
-print(custom_pop(months))
-print(months)
 
 # 5
 
