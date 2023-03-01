@@ -16,8 +16,10 @@ def custom_len(input_list):
 
     """
 
+    # sum([1 for _ in input_list])
     item_count = 0
 
+    # usually use _ if you aren't using the value
     for _ in input_list:
         item_count += 1
 
